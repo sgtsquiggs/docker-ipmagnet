@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+
+# fetch site
+[[ ! -d /config/www/ipmagnet/.git ]] && \
+	git clone https://github.com/cbdevnet/ipmagnet /config/www/ipmagnet
+
+# update public url
+sed -i "s#http://localhost:80/ipmagnet/#${PUBLIC_URL}#g" /config/www/ipmagnet/index.php
+
+# permissions
+chown -R abc:abc \
+	/config/www
