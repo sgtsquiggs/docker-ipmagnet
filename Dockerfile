@@ -6,8 +6,6 @@ ENV PUBLIC_URL=http://localhost:80/
 RUN \
 # install packages
     apk add --no-cache \
-        php5 \
-        php5-fpm \
         php5-json \
         php5-pdo_sqlite
 
